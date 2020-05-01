@@ -16,4 +16,7 @@ Z = (H925-mean(H925))/std(H925);
 %% perform PID computation
 nbins = 20;
 maxlag = 45;
+% each of the below matrices are of dim (maxlag+1,maxlag+1)
+% Rows corresponds to the lag in Y, and columns to the lag in Z
+% If not concurrent, then X is always future (target variable)
 [U_Y, U_Z, S, R] = lagged_PID(X, Y, Z, nbins, maxlag);
