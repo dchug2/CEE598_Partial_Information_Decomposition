@@ -1,0 +1,8 @@
+%% Function to calculate the joint entropy from X and Y
+% X and Y are (N x 1) vectors
+% Nbins is a 2 element vector
+function H_2d = jointentropy(X_pd, Y, Nbins)
+    p_2d = histcounts2(X, Y, Nbins,'Normalization', 'probability');
+    idx = p_2d > 0;
+    H_2d = sum((-1)*(p_2d(idx).*log2(p_2d(idx))));
+end
