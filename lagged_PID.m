@@ -27,7 +27,7 @@ function [U_Y, U_Z, S, R] = lagged_PID(X, Y, Z, nbins, maxlag)
             
             % compute PID components
             [U_Y(lagY+1, lagZ+1), U_Z(lagY+1, lagZ+1),...
-                S(lagY+1, lagZ+1), R(lagY+1, lagZ+1)] = PID(X, Y, Z, nbins);
+                S(lagY+1, lagZ+1), R(lagY+1, lagZ+1)] = PID(X_lag, Y_lag, Z_lag, nbins);
         end
     end
 end
